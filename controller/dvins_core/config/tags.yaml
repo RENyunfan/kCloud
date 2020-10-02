@@ -1,0 +1,154 @@
+# # Definitions of tags to detect
+#
+# ## General remarks
+#
+# - All length in meters
+# - Ellipsis (...) signifies that the previous element can be repeated multiple times.
+#
+# ## Standalone tag definitions
+# ### Remarks
+#
+# - name is optional
+#
+# ### Syntax
+#
+# standalone_tags:
+#   [
+#     {id: ID, size: SIZE, name: NAME},
+#     ...
+#   ]
+standalone_tags:
+  [
+    {id: 0, size: 0.16},
+      {id: 1, size: 0.4},
+      {id: 2, size: 0.4},
+      {id: 3, size: 0.4},
+      {id: 4, size: 0.4},
+      {id: 5, size: 0.4},
+      {id: 6, size: 0.4},
+      {id: 7, size: 0.4},
+      {id: 8, size: 0.4},
+      {id: 9, size: 0.4},
+      {id: 10, size: 0.4},
+      {id: 11, size: 0.4},
+      {id: 12, size: 0.4},
+      {id: 13, size: 0.4},
+      {id: 14, size: 0.4},
+      {id: 15, size: 0.4},
+      {id: 16, size: 0.4},
+      {id: 17, size: 0.4}, 
+      {id: 18, size: 0.4},
+      {id: 19, size: 0.4},
+      {id: 22, size: 0.03},
+      {id: 500, size: 0.24},
+      {id: 501, size: 0.24},
+      {id: 502, size: 0.24},
+      {id: 503, size: 0.24},
+      {id: 504, size: 0.24},
+      {id: 505, size: 0.24},
+      {id: 506, size: 0.24},
+      {id: 507, size: 0.24},
+      {id: 508, size: 0.24},
+      {id: 509, size: 0.24},
+      {id: 510, size: 0.24},
+      {id: 511, size: 0.24},
+      {id: 512, size: 0.24},
+      {id: 513, size: 0.24},
+      {id: 514, size: 0.24},
+      {id: 515, size: 0.24},
+      {id: 516, size: 0.24},
+      {id: 517, size: 0.24},
+      {id: 518, size: 0.24},
+      {id: 519, size: 0.24},
+      {id: 520, size: 0.24},
+      {id: 521, size: 0.24},
+      {id: 522, size: 0.24},
+      {id: 523, size: 0.24},
+      {id: 524, size: 0.24},
+      {id: 525, size: 0.24},
+      {id: 526, size: 0.24},
+      {id: 527, size: 0.24},
+      {id: 528, size: 0.24},
+      {id: 529, size: 0.24},
+      {id: 530, size: 0.24},
+      {id: 531, size: 0.24},
+      {id: 532, size: 0.24},
+      {id: 533, size: 0.24},
+      {id: 534, size: 0.24},
+      {id: 535, size: 0.24},
+      {id: 536, size: 0.24},
+      {id: 537, size: 0.24},
+      {id: 538, size: 0.24},
+      {id: 539, size: 0.24},
+      {id: 540, size: 0.24},
+      {id: 541, size: 0.24},
+      {id: 542, size: 0.24},
+      {id: 543, size: 0.24},
+      {id: 544, size: 0.24},
+      {id: 545, size: 0.24},
+      {id: 546, size: 0.24},
+      {id: 547, size: 0.24},
+      {id: 548, size: 0.24},
+      {id: 549, size: 0.24},
+      {id: 550, size: 0.24},
+      {id: 551, size: 0.24},
+      {id: 552, size: 0.24},
+      {id: 553, size: 0.24},
+      {id: 554, size: 0.24},
+      {id: 555, size: 0.24},
+      {id: 556, size: 0.24},
+      {id: 557, size: 0.24},
+      {id: 558, size: 0.24},
+      {id: 559, size: 0.24},
+      {id: 560, size: 0.24},
+      {id: 561, size: 0.24},
+      {id: 562, size: 0.24},
+      {id: 563, size: 0.24},
+      {id: 564, size: 0.24},
+      {id: 565, size: 0.24},
+      {id: 566, size: 0.24},
+      {id: 567, size: 0.24},
+      {id: 568, size: 0.24},
+      {id: 569, size: 0.24},
+      {id: 570, size: 0.24},
+      {id: 571, size: 0.24},
+      {id: 572, size: 0.24},
+      {id: 573, size: 0.24},
+      {id: 574, size: 0.24},
+      {id: 575, size: 0.24},
+      {id: 576, size: 0.24},
+      {id: 577, size: 0.24},
+      {id: 578, size: 0.24},
+      {id: 579, size: 0.24},
+      {id: 580, size: 0.24},
+      {id: 581, size: 0.24},
+      {id: 582, size: 0.24},
+      {id: 583, size: 0.24},
+      {id: 584, size: 0.24},
+      {id: 585, size: 0.24},
+      {id: 586, size: 0.16}
+  ]
+# ## Tag bundle definitions
+# ### Remarks
+#
+# - name is optional
+# - x, y, z have default values of 0 thus they are optional
+# - qw has default value of 1 and qx, qy, qz have default values of 0 thus they are optional
+#
+# ### Syntax
+#
+# tag_bundles:
+#   [
+#     {
+#       name: 'CUSTOM_BUNDLE_NAME',
+#       layout:
+#         [
+#           {id: ID, size: SIZE, x: X_POS, y: Y_POS, z: Z_POS, qw: QUAT_W_VAL, qx: QUAT_X_VAL, qy: QUAT_Y_VAL, qz: QUAT_Z_VAL},
+#           ...
+#         ]
+#     },
+#     ...
+#   ]
+tag_bundles:
+  [
+  ]

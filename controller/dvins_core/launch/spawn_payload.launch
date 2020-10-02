@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="mav_name1" default="firefly1"/>
+  <arg name="mav_name2" default="none" />
+  <arg name="mav_name3" default="none" />
+  <arg name="payload_name" default="payload"/>
+  <arg name="payload_mass" default="0.2"/>
+  <arg name="body_width" default="0.1"/>
+  <arg name="body_length" default="0.1"/>
+  <arg name="body_height" default="0.1"/>
+  <arg name="model" default="$(find dvins_core)/urdf/payload.xacro"/>
+  <arg name="tf_prefix" default="$(optenv ROS_NAMESPACE)"/>
+  <arg name="x" default="0.0"/>
+  <arg name="y" default="0.0"/>
+  <arg name="z" default="0.0"/>
+
+  <!-- send the robot XML to param server -->
+  <param name="robot_description" command="
+    $(find xacro)/xacro '$(arg model)'
+    mav_name1:=$(arg mav_name1)
+    mav_name2:=$(arg mav_name2)
+    mav_name3:=$(arg mav_name3)
+    payload_mass:=$(arg payload_mass)
+    body_width:=$(arg body_width)
+    body_length:=$(arg body_length)
+    body_height:=$(arg body_height)
+    namespace:=$(arg payload_name)"
+  />
+  <param name="tf_prefix" type="string" value="$(arg tf_prefix)" />
+
+  <!-- push robot_description to factory and spawn payload in gazebo -->
+  <node name="spawn_payload" pkg="gazebo_ros" type="spawn_model"
+   args="-param robot_description
+         -urdf
+         -x $(arg x)
+         -y $(arg y)
+         -z $(arg z)
+	 -model $(arg payload_name)"
+   respawn="false" output="screen">
+  </node>
+</launch>

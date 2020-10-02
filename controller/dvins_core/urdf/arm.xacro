@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+	<!-- property xacro -->
+	<xacro:property name="mass_head" value="0.001" />
+	<xacro:property name="mass_body" value="0.10" />
+	<xacro:property name="mass_servo" value="0.01" />
+	<xacro:property name="length_head" value="0.04" />
+	<xacro:property name="length_body" value="0.12" />
+	<xacro:property name="arm_x" value="0.01" />
+	<xacro:property name="arm_y" value="0.01" />
+	<xacro:property name="servo_y" value="0.012" />
+
+	<xacro:property name="PI" value="3.1415926" />
+	<xacro:property name="MESH_SCALE_x" value="0.5" />
+	<xacro:property name="MESH_SCALE_y" value="0.3" />	
+	<xacro:property name="MESH_SCALE_z" value="0.2" />
+	<!-- origin of joint connecting head and mav -->
+	<xacro:property name="joint_origin_connect_mav">
+    	<origin xyz="0 0 0" rpy="0 0 0" />
+  </xacro:property>
+
+	<!-- mav's base_link - mav_arm_base_head_joint - arm_head_link -->
+  <xacro:macro name="xacro_arm_head"  params="parent_link">
+    <link name="${namespace}/arm_head_link">
+	    <xacro:box_inertial x="${arm_x}"	y="${arm_y}"	z="${length_head}"	mass="${mass_head}">
+		    <origin xyz="0 0 0" rpy="0 0 0" />
+	    </xacro:box_inertial>
+	    <collision>
+		    <origin xyz="0 0 ${-length_head/2}" rpy="0 0 0" />
+		    <geometry>
+			    <box size="${arm_x} ${arm_y} ${length_head}" />
+		    </geometry>
+	    </collision>
+	    <visual>
+		    <origin xyz="0 0 ${-length_head/2}" rpy="0 0 0" />
+		    <geometry>
+			    <box size="${arm_x} ${arm_y} ${length_head}" />
+		    </geometry>
+	    </visual>
+    </link>
+    <!-- joint connect mav and head -->
+    <joint name="${namespace}/mav_base_head_joint" type="fixed">
+	    <xacro:insert_block name="joint_origin_connect_mav"  />         
+	    <parent link="${parent_link}" />
+	    <child link="${namespace}/arm_head_link"  />
+    </joint>
+  </xacro:macro>	
+
+	<!-- arm_body_link - body_servo_joint - arm_servo_link -->
+  <xacro:macro name="xacro_arm_body_servo" params="link_index mass_body length_body">
+    <link name="${namespace}/arm_body_link${link_index}">
+	    <xacro:box_inertial	x="${arm_x}"	y="${arm_y}"	z="${length_body}"	mass="${mass_body}">
+		    <origin xyz="0 0 0" rpy="0 0 0" />
+	    </xacro:box_inertial>
+	    <collision>
+		    <origin xyz="0 0 ${-length_body / 2}" rpy="0 0 0" />
+		    <geometry>
+			    <box size="${arm_x} ${arm_y} ${length_body}" />
+		    </geometry>
+	    </collision>
+	    <visual>
+		    <origin xyz="0 0 ${-length_body / 2}" rpy="0 0 0" />
+		    <geometry>
+			    <box size="${arm_x} ${arm_y} ${length_body}" />
+		    </geometry>
+	    </visual>
+    </link>
+    <xacro:xacro_arm_servo	link_index="${link_index}">
+    </xacro:xacro_arm_servo>
+	    <!-- joint : connect body_link and servo -->
+    <joint name="${namespace}/arm_body_servo_joint${link_index}" type="fixed">
+	    <origin xyz="0 0 ${-length_body}" rpy="0 0 0" />
+	    <parent link="${namespace}/arm_body_link${link_index}" />
+	    <child link="${namespace}/arm_servo_link${link_index}"  />
+    </joint>
+  </xacro:macro>	 
+
+  <!-- servo -->
+  <xacro:macro name="xacro_arm_servo" params="link_index" >
+   	<link name="${namespace}/arm_servo_link${link_index}">
+      <xacro:box_inertial	x="${arm_x}"	y="${servo_y}"	z="${arm_x}"	mass="${mass_servo}">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+      </xacro:box_inertial>
+
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<box size="${arm_x} ${servo_y} ${arm_x}" /> 
+			</geometry>
+		</collision>
+  
+		<visual>
+		   <origin xyz="0 0 0" rpy="0 0 0" />
+		   <geometry>
+				<box size="${arm_x} ${servo_y} ${arm_x}" /> 
+		   </geometry>
+    	</visual>
+    </link>
+  </xacro:macro>
+  	
+  <!-- gripper -->
+  <xacro:macro name="xacro_arm_gripper" params="prefix">
+	<link name="${namespace}/${prefix}_arm_gripper">
+	  	<inertial>
+			<mass value="0.001" />
+			<inertia 	ixx="0.01" ixy="0.0" ixz="0.0"
+						iyy="0.01" iyz="0.0"
+						izz="0.01" />
+		</inertial>
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://dvins_core/meshes/l_finger.dae" scale="${MESH_SCALE_x} ${MESH_SCALE_y} ${MESH_SCALE_z}"/>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="package://dvins_core/meshes/l_finger.dae" scale="${MESH_SCALE_x} ${MESH_SCALE_y} ${MESH_SCALE_z}"/>
+			</geometry>
+		</collision>
+	</link>
+
+	<joint name="${namespace}/${prefix}_gripper_to_tip_joint" type="fixed">
+		<parent link="${namespace}/${prefix}_arm_gripper" />
+		<child link="${namespace}/${prefix}_arm_tip" />
+	</joint>
+
+	<link name="${namespace}/${prefix}_arm_tip">
+		<inertial>
+			<mass value="0.001" />
+			<inertia ixx="0.01" ixy="0.0" ixz="0.0"
+						iyy="0.01" iyz="0.0"
+						izz="0.01" />
+		</inertial>
+		<visual>
+			<origin rpy="0.0 0 0" xyz=" ${0.09137*MESH_SCALE_x} ${0.00495*MESH_SCALE_y} 0"/>
+			<geometry>
+				<mesh filename="package://dvins_core/meshes/l_finger_tip.dae" scale="${MESH_SCALE_x} ${MESH_SCALE_y} ${MESH_SCALE_z}"/>
+			</geometry>
+		</visual>
+		<collision>
+			<origin rpy="0.0 0 0" xyz=" ${0.09137*MESH_SCALE_x} ${0.00495*MESH_SCALE_y} 0"/>
+			<geometry>
+				<mesh filename="package://dvins_core/meshes/l_finger_tip.dae" scale="${MESH_SCALE_x} ${MESH_SCALE_y} ${MESH_SCALE_z}"/>
+			</geometry>
+		</collision>
+	</link>
+  </xacro:macro>
+
+  	<!-- all arm-->
+  	<xacro:macro name="suspended_arm_plugin_macro" params="parent_link">
+		<!-- head link : joint with uav -->
+		<xacro:xacro_arm_head  parent_link="${parent_link}">
+		</xacro:xacro_arm_head>
+				
+		<!-- joint: connect head and rotating servo  -->
+		<joint name="${namespace}/arm_head_servo_joint" type="fixed">
+			<origin xyz="0 0 ${-length_head}" rpy="0 0 0" />
+			<parent link="${namespace}/arm_head_link" />
+			<child link="${namespace}/arm_servo_link"  />
+			<axis xyz="0 1 0" />
+		</joint>
+   	
+		<!--rotating servo -->
+		<xacro:xacro_arm_servo  link_index="">
+		</xacro:xacro_arm_servo>
+		
+		<!-- joint: connect rotating servo and rotating body link (with grasping servo)-->
+	   	<joint name="${namespace}/arm_servo_body_joint" type="revolute">
+				<origin xyz="0 0 0" rpy="0 ${-90/180*PI} 0" />
+				<parent link="${namespace}/arm_servo_link" />
+				<child link="${namespace}/arm_body_link1"  />
+				<axis xyz="0 1 0" />
+				<dynamics damping="0.00001" friction="0.1" />
+				<limit upper="3.14" lower="-0.5" effort="100" velocity="100" />
+				<!--safety_controller soft_upper_limit="100" soft_lower_limit="100" k_position="10" k_velocity="1" /-->
+	   	</joint>
+
+		<!-- rotating body link and grasping servo -->
+		<xacro:xacro_arm_body_servo
+			link_index="1"
+			mass_body="${mass_body}"
+			length_body="${length_body}" >
+		</xacro:xacro_arm_body_servo>
+		   	
+		<!-- left and right gripper -->
+		<!-- define two link and joint: ${prefix}_arm_gripper-->
+		<xacro:xacro_arm_gripper  prefix="left" >
+		</xacro:xacro_arm_gripper>
+		<xacro:xacro_arm_gripper  prefix="right">
+		</xacro:xacro_arm_gripper>
+		
+   	<!-- joint: connect gripper and servo -->
+   	<joint name="${namespace}/left_gripper_joint" type="revolute">
+   		<origin xyz="0 0 0" rpy="${-PI/2} ${PI/2} 0 " />
+   		<parent link="${namespace}/arm_servo_link1" />
+   		<child link="${namespace}/left_arm_gripper" />
+   		<axis xyz="0 0 1" />
+   		<limit effort="0.1" velocity="0.0" lower="0" upper="${PI/180*70}" />
+   		<!--calibration rising="${PI/2}" falling="${PI}" /-->
+   		<dynamics dampling="0.00001" friction="0.1" />
+   	</joint>
+   	
+   	<joint name="${namespace}/right_gripper_joint" type="revolute">
+			<origin xyz="0 0 0" rpy="${PI/2} ${PI/2} 0 " />
+			<parent link="${namespace}/arm_servo_link1" />
+			<child link="${namespace}/right_arm_gripper" />
+			<axis xyz="0 0 1" />
+			<limit effort="0.1" velocity="0.0" lower="0" upper="${PI/180*70}" />
+			<!--calibration rising="0.0" falling="${PI/2}" /-->
+			<dynamics dampling="0.00001" friction="0.1" />
+   	</joint> 
+   	
+	<gazebo>
+			<plugin name="gazebo_arm_plugin" filename="arm_plugin.so">
+				<robotNamespace>${namespace}</robotNamespace>
+				<jointRot>${namespace}/arm_servo_body_joint</jointRot>
+				<jointGspLeft>${namespace}/left_gripper_joint</jointGspLeft>
+				<jointGspRight>${namespace}/right_gripper_joint</jointGspRight>
+				<commandArmSubTopic>command/command_arm_sub_topic</commandArmSubTopic>
+				<odoArmPubTopic>/analysis/odo_arm</odoArmPubTopic>
+				<errArmPubTopic>/analysis/err_arm</errArmPubTopic>
+			</plugin>
+   	</gazebo> 
+	
+  	</xacro:macro>
+</robot>

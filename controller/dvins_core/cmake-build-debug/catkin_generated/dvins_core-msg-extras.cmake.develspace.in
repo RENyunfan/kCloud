@@ -1,0 +1,2 @@
+set(dvins_core_MESSAGE_FILES "/home/kevin/UAV/dvins_core/msg/ArucoDetectionInImage.msg;/home/kevin/UAV/dvins_core/msg/ArucoDetectionInImageArray.msg;/home/kevin/UAV/dvins_core/msg/ArucoDetection.msg;/home/kevin/UAV/dvins_core/msg/ArucoDetectionArray.msg;/home/kevin/UAV/dvins_core/msg/CommandArmServoAngle.msg;/home/kevin/UAV/dvins_core/msg/PoseEuler.msg;/home/kevin/UAV/dvins_core/msg/CommandArmServoAngleTrajectory.msg;/home/kevin/UAV/dvins_core/msg/CommandMavAndGripper.msg")
+set(dvins_core_SERVICE_FILES "")

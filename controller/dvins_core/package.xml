@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>dvins_core</name>
+  <version>0.2.4</version>
+  <description>
+    my dvins_core
+  </description>
+  <maintainer email="wang_siqiang@163.com">Siqiang Wang</maintainer>
+  <license>BSD</license>
+  <url type="website">nrs-lab.com</url>
+  <author email="wang_siqiang@163.com">Siqiang Wang</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>cv_bridge</depend>
+  <depend>image_geometry</depend>
+  <depend>dynamic_reconfigure</depend>
+  <depend>geometry_msgs</depend>
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>mav_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>trajectory_msgs</depend>
+  <depend>gazebo</depend>
+  <depend>std_msgs</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <depend>eigen</depend>
+  <depend>rotors_gazebo_plugins</depend>
+  <depend>aprilatg_ros</depend>
+</package>

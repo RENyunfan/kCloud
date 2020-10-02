@@ -1,0 +1,62 @@
+<launch>
+  <!-- 加载模型参数等 -->
+  <arg name="mav_name" default="hummingbird"/>
+  <arg name="my_model" default="arm_5"/>
+  <arg name="world_name" default="home1"/>
+  <arg name="enable_logging" default="false" />
+  <arg name="enable_ground_truth" default="true" />
+  <arg name="log_file" default="$(arg mav_name)" />
+  <arg name="debug" default="false"/>
+  <arg name="gui" default="true"/>
+  <arg name="paused" default="false"/>
+  <arg name="verbose" default="false"/>
+  <!-- 加载gazebo的world -->
+  <env name="GAZEBO_MODEL_PATH" value="${GAZEBO_MODEL_PATH}:$(find rotors_gazebo)/models"/>
+  <env name="GAZEBO_RESOURCE_PATH" value="${GAZEBO_RESOURCE_PATH}:$(find rotors_gazebo)/models"/>
+  <include file="$(find rotors_gazebo)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find dvins_core)/worlds/$(arg world_name).world" />
+    <arg name="debug" value="$(arg debug)" />
+    <arg name="paused" value="$(arg paused)" />
+    <arg name="gui" value="$(arg gui)" />
+    <arg name="verbose" value="$(arg verbose)"/>
+  </include>
+  <!-- spawn_mav.launch:加载无人机模型，包括模型生成的位置信息等。注意：model由mav_generic_odometry_sensor.gazebo确定 -->
+    <!-- spawn_mav.launch:加载无人机模型，包括模型生成的位置信息等 -->
+  <rosparam file="$(find rotors_gazebo)/config/gazebo_ros_control_params.yaml" command="load"/>
+
+	<include file="$(find rotors_gazebo)/launch/spawn_mav.launch">
+	      <arg name="mav_name" value="$(arg mav_name)" />
+	      <arg name="model" value="$(find rotors_description)/urdf/mav_generic_odometry_sensor.gazebo" />
+	      <arg name="enable_logging" value="$(arg enable_logging)" />
+	      <arg name="enable_ground_truth" value="$(arg enable_ground_truth)" />
+	      <arg name="log_file" value="$(arg log_file)"/>
+  </include>
+  <!-- Group:hummingbird下的启动项: -->
+  <group ns="$(arg mav_name)">
+	  <!-- 飞行器姿态控制器: -->
+	  <node name="lee_position_controller_node" pkg="rotors_control" type="lee_position_controller_node" output="screen">
+	    <rosparam command="load" file="$(find rotors_gazebo)/resource/lee_controller_uam.yaml" />
+	    <rosparam command="load" file="$(find rotors_gazebo)/resource/uam.yaml" />
+	    <remap from="odometry" to="odometry_sensor1/odometry" />
+	  </node>
+	  <node name="hovering_example" pkg="rotors_gazebo" type="hovering_example" output="screen"/>
+	  <!-- 将关节控制器的配置参数加载到参数服务器中 arm_trajectory_controller.launch-->
+	    <rosparam file="$(find rotors_gazebo)/config/gazebo_ros_control_params.yaml" command="load"/>
+	  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+		  output="screen"  args="jo1 jo2 jo3 jo4 jo5 jo6 gripper_left gripper_right"/>
+  </group>
+  <node  name="updateTF" pkg="rotors_gazebo" type="mavJointStatePublisher.py" output="screen"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
+    <!-- <param name="publish_frequency" value="10" /> -->
+  </node>
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
+    <param name="rate" value="100.0" />
+    <remap from="/joint_states" to="/joint_states_prop" />
+  </node>
+  <include file="$(find dvins_core)/launch/tag.launch">
+    <arg name="show_detections" value="false" />
+		<arg name="camera" value="/camera/image_rect"/>
+		<arg name="camera_info" value="/camera/camera_info"/>
+	</include>
+</launch>

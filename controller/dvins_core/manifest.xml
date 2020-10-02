@@ -1,0 +1,21 @@
+<package>
+  <description brief="dvins_core">
+
+     dvins_core
+
+  </description>
+  <author>leonidas</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/dvins_core</url>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="gazebo"/>
+  <depend package="std_msgs"/>
+  <depend package="apriltag_ros"/>
+  <export>
+    <gazebo plugin_path="${prefix}/lib" gazebo_media_path="${prefix}" />
+  </export>
+</package>
+
+

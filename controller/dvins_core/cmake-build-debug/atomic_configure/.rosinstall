@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/kevin/UAV/dvins_core/cmake-build-debug/devel/setup.sh

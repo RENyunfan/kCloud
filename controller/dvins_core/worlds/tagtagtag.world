@@ -1,0 +1,4401 @@
+<sdf version='1.6'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose frame=''>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.5 -1</direction>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='tagtagtag'>
+      <model name='rectang_tag_door'>
+        <model name='Tag10'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0.1 0 -0 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.5 0.001 0.5</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.5 0.001 0.5</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag10/materials/scripts</uri>
+                  <uri>model://Tag10/materials/textures</uri>
+                  <name>vrc/Tag10</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-2.56781 -2.7391 -0.115231 0 -0 0</pose>
+        </model>
+        <model name='Tag11'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0.1 0 -0 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.5 0.001 0.5</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.5 0.001 0.5</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag11/materials/scripts</uri>
+                  <uri>model://Tag11/materials/textures</uri>
+                  <name>vrc/Tag11</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-0.967016 -2.71591 -0.09296 0 -0 0</pose>
+        </model>
+        <model name='Tag12'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0.1 0 -0 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.5 0.001 0.5</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.5 0.001 0.5</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag12/materials/scripts</uri>
+                  <uri>model://Tag12/materials/textures</uri>
+                  <name>vrc/Tag12</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>2.62514 -2.78803 -0.180677 0 -0 0</pose>
+        </model>
+        <model name='Tag16'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0.1 0 1.57 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.5 0.001 0.5</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.5 0.001 0.5</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag16/materials/scripts</uri>
+                  <uri>model://Tag16/materials/textures</uri>
+                  <name>vrc/Tag16</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>5.53752 2.44638 -0.24217 0 -0 0</pose>
+        </model>
+        <model name='Tag17'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0.1 0 -0 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.5 0.001 0.5</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.5 0.001 0.5</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag17/materials/scripts</uri>
+                  <uri>model://Tag17/materials/textures</uri>
+                  <name>vrc/Tag17</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>2.27492 2.46278 0.055693 0 -0 0</pose>
+        </model>
+        <model name='Tag19'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0.1 0 -0 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.5 0.001 0.5</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.5 0.001 0.5</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag19/materials/scripts</uri>
+                  <uri>model://Tag19/materials/textures</uri>
+                  <name>vrc/Tag19</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-1.56097 2.45711 0.126815 0 -0 0</pose>
+        </model>
+        <model name='Tag500'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 1.57 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag500/materials/scripts</uri>
+                  <uri>model://Tag500/materials/textures</uri>
+                  <name>vrc/Tag500</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-8.63151 5.78139 0.17484 0 -0 0</pose>
+        </model>
+        <model name='Tag501'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 1.57 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag501/materials/scripts</uri>
+                  <uri>model://Tag501/materials/textures</uri>
+                  <name>vrc/Tag501</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-6.56786 5.76946 -0.005082 0 -0 0</pose>
+        </model>
+        <model name='Tag502'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 1.57 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag502/materials/scripts</uri>
+                  <uri>model://Tag502/materials/textures</uri>
+                  <name>vrc/Tag502</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-4.60085 5.78078 0.027283 0 -0 0</pose>
+        </model>
+        <model name='Tag503'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 1.57 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag503/materials/scripts</uri>
+                  <uri>model://Tag503/materials/textures</uri>
+                  <name>vrc/Tag503</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-2.55467 5.77379 -0.046381 0 -0 0</pose>
+        </model>
+        <model name='Tag504'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 1.57 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag504/materials/scripts</uri>
+                  <uri>model://Tag504/materials/textures</uri>
+                  <name>vrc/Tag504</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-0.537655 5.77031 -0.010499 0 -0 0</pose>
+        </model>
+        <model name='Tag505'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 1.57 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag505/materials/scripts</uri>
+                  <uri>model://Tag505/materials/textures</uri>
+                  <name>vrc/Tag505</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>1.45105 5.77601 -0.223016 0 -0 0</pose>
+        </model>
+        <model name='Tag506'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 1.57 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag506/materials/scripts</uri>
+                  <uri>model://Tag506/materials/textures</uri>
+                  <name>vrc/Tag506</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>3.6389 5.78005 0.050605 0 -0 0</pose>
+        </model>
+        <model name='Tag508'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 1.57 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag508/materials/scripts</uri>
+                  <uri>model://Tag508/materials/textures</uri>
+                  <name>vrc/Tag508</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>5.45198 5.773 -0.294287 0 -0 0</pose>
+        </model>
+        <model name='Tag509'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 1.57 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag509/materials/scripts</uri>
+                  <uri>model://Tag509/materials/textures</uri>
+                  <name>vrc/Tag509</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>7.37911 5.77859 0.055954 0 -0 0</pose>
+        </model>
+        <model name='Tag510'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 1.57 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag510/materials/scripts</uri>
+                  <uri>model://Tag510/materials/textures</uri>
+                  <name>vrc/Tag510</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>9.43357 5.76854 0.199067 0 -0 0</pose>
+        </model>
+        <model name='Tag511_0'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 1.57 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag511/materials/scripts</uri>
+                  <uri>model://Tag511/materials/textures</uri>
+                  <name>vrc/Tag511</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>9.49825 -6.04076 0.206371 0 -0 0</pose>
+        </model>
+        <model name='Tag512'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 1.57 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag512/materials/scripts</uri>
+                  <uri>model://Tag512/materials/textures</uri>
+                  <name>vrc/Tag512</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>8.45936 -6.03277 0.008141 0 -0 0</pose>
+        </model>
+        <model name='Tag513'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 1.57 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag513/materials/scripts</uri>
+                  <uri>model://Tag513/materials/textures</uri>
+                  <name>vrc/Tag513</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>5.89194 -6.04825 0.261097 0 -0 0</pose>
+        </model>
+        <model name='Tag514'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 1.57 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag514/materials/scripts</uri>
+                  <uri>model://Tag514/materials/textures</uri>
+                  <name>vrc/Tag514</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>4.45592 -6.0546 0.177076 0 -0 0</pose>
+        </model>
+        <model name='Tag515'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 1.57 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag515/materials/scripts</uri>
+                  <uri>model://Tag515/materials/textures</uri>
+                  <name>vrc/Tag515</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>2.64375 -6.05189 0.210848 0 -0 0</pose>
+        </model>
+        <model name='Tag516'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 1.57 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag516/materials/scripts</uri>
+                  <uri>model://Tag516/materials/textures</uri>
+                  <name>vrc/Tag516</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-0.550614 -6.04681 0.182751 0 -0 0</pose>
+        </model>
+        <model name='Tag517'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 1.57 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag517/materials/scripts</uri>
+                  <uri>model://Tag517/materials/textures</uri>
+                  <name>vrc/Tag517</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-2.03037 -6.05292 0.265919 0 -0 0</pose>
+        </model>
+        <model name='Tag518'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 1.57 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag518/materials/scripts</uri>
+                  <uri>model://Tag518/materials/textures</uri>
+                  <name>vrc/Tag518</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-3.49891 -6.05222 -0.008344 0 -0 0</pose>
+        </model>
+        <model name='Tag519'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 1.57 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag519/materials/scripts</uri>
+                  <uri>model://Tag519/materials/textures</uri>
+                  <name>vrc/Tag519</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-7.02121 -6.02807 0.214664 0 -0 0</pose>
+        </model>
+        <model name='Tag520'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 1.57 0</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag520/materials/scripts</uri>
+                  <uri>model://Tag520/materials/textures</uri>
+                  <name>vrc/Tag520</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-8.39361 -6.03917 0.042146 0 -0 0</pose>
+        </model>
+        <model name='Tag531'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag531/materials/scripts</uri>
+                  <uri>model://Tag531/materials/textures</uri>
+                  <name>vrc/Tag531</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-9.46434 -5.15371 0.121026 0 -0 0</pose>
+        </model>
+        <model name='Tag532'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag532/materials/scripts</uri>
+                  <uri>model://Tag532/materials/textures</uri>
+                  <name>vrc/Tag532</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-9.43448 -3.67672 0.1199 0 -0 0</pose>
+        </model>
+        <model name='Tag533'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag533/materials/scripts</uri>
+                  <uri>model://Tag533/materials/textures</uri>
+                  <name>vrc/Tag533</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-9.43647 -1.68 0.088645 0 -0 0</pose>
+        </model>
+        <model name='Tag534'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag534/materials/scripts</uri>
+                  <uri>model://Tag534/materials/textures</uri>
+                  <name>vrc/Tag534</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-9.39568 -0.411083 -0.359263 0 -0 0</pose>
+        </model>
+        <model name='Tag535'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag535/materials/scripts</uri>
+                  <uri>model://Tag535/materials/textures</uri>
+                  <name>vrc/Tag535</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-9.45868 2.20865 0.001535 0 -0 0</pose>
+        </model>
+        <model name='Tag536'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag536/materials/scripts</uri>
+                  <uri>model://Tag536/materials/textures</uri>
+                  <name>vrc/Tag536</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-9.40956 3.51705 0.159334 0 -0 0</pose>
+        </model>
+        <model name='Tag537'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag537/materials/scripts</uri>
+                  <uri>model://Tag537/materials/textures</uri>
+                  <name>vrc/Tag537</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-9.45738 4.8265 -0.0513 0 -0 0</pose>
+        </model>
+        <model name='Tag538'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag538/materials/scripts</uri>
+                  <uri>model://Tag538/materials/textures</uri>
+                  <name>vrc/Tag538</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-9.45703 2.84833 -0.48277 0 -0 0</pose>
+        </model>
+        <model name='Tag539'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag539/materials/scripts</uri>
+                  <uri>model://Tag539/materials/textures</uri>
+                  <name>vrc/Tag539</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-9.45583 -4.50507 -0.009742 0 -0 0</pose>
+        </model>
+        <model name='Tag540'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag540/materials/scripts</uri>
+                  <uri>model://Tag540/materials/textures</uri>
+                  <name>vrc/Tag540</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-9.45822 -2.76528 -0.084634 0 -0 0</pose>
+        </model>
+        <model name='Tag541'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag541/materials/scripts</uri>
+                  <uri>model://Tag541/materials/textures</uri>
+                  <name>vrc/Tag541</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>10.3807 4.91568 -0.461618 0 -0 0</pose>
+        </model>
+        <model name='Tag542'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag542/materials/scripts</uri>
+                  <uri>model://Tag542/materials/textures</uri>
+                  <name>vrc/Tag542</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>10.3435 3.90989 -0.047569 0 -0 0</pose>
+        </model>
+        <model name='Tag543'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag543/materials/scripts</uri>
+                  <uri>model://Tag543/materials/textures</uri>
+                  <name>vrc/Tag543</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>10.3377 2.92258 -0.0475 0 -0 0</pose>
+        </model>
+        <model name='Tag544'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag544/materials/scripts</uri>
+                  <uri>model://Tag544/materials/textures</uri>
+                  <name>vrc/Tag544</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>10.2886 1.74988 -0.222134 0 -0 0</pose>
+        </model>
+        <model name='Tag545'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag545/materials/scripts</uri>
+                  <uri>model://Tag545/materials/textures</uri>
+                  <name>vrc/Tag545</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>10.3205 0.491024 -0.104602 0 -0 0</pose>
+        </model>
+        <model name='Tag546'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag546/materials/scripts</uri>
+                  <uri>model://Tag546/materials/textures</uri>
+                  <name>vrc/Tag546</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>10.3313 -1.11998 -0.160051 0 -0 0</pose>
+        </model>
+        <model name='Tag547'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag547/materials/scripts</uri>
+                  <uri>model://Tag547/materials/textures</uri>
+                  <name>vrc/Tag547</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>10.3486 -4.09101 0.177507 0 -0 0</pose>
+        </model>
+        <model name='Tag548'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag548/materials/scripts</uri>
+                  <uri>model://Tag548/materials/textures</uri>
+                  <name>vrc/Tag548</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>6.57981 -2.10699 0.230481 0 -0 0</pose>
+        </model>
+        <model name='Tag549'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag549/materials/scripts</uri>
+                  <uri>model://Tag549/materials/textures</uri>
+                  <name>vrc/Tag549</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>6.57833 -0.487634 0.063 0 -0 0</pose>
+        </model>
+        <model name='Tag550'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag550/materials/scripts</uri>
+                  <uri>model://Tag550/materials/textures</uri>
+                  <name>vrc/Tag550</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>6.57501 1.37979 -0.055489 0 -0 0</pose>
+        </model>
+        <model name='Tag551'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag551/materials/scripts</uri>
+                  <uri>model://Tag551/materials/textures</uri>
+                  <name>vrc/Tag551</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-5.63019 1.9353 -0.188828 0 -0 0</pose>
+        </model>
+        <model name='Tag552'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag552/materials/scripts</uri>
+                  <uri>model://Tag552/materials/textures</uri>
+                  <name>vrc/Tag552</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-5.62265 0.300223 -0.009232 0 -0 0</pose>
+        </model>
+        <model name='Tag553'>
+          <static>1</static>
+          <link name='link'>
+            <pose frame=''>0 0 0 0 -0 1.57</pose>
+            <collision name='collision'>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <max_contacts>10</max_contacts>
+              <surface>
+                <contact>
+                  <ode/>
+                </contact>
+                <bounce/>
+                <friction>
+                  <torsional>
+                    <ode/>
+                  </torsional>
+                  <ode/>
+                </friction>
+              </surface>
+            </collision>
+            <visual name='visual'>
+              <cast_shadows>0</cast_shadows>
+              <geometry>
+                <box>
+                  <size>0.3 0.001 0.3</size>
+                </box>
+              </geometry>
+              <material>
+                <script>
+                  <uri>model://Tag553/materials/scripts</uri>
+                  <uri>model://Tag553/materials/textures</uri>
+                  <name>vrc/Tag553</name>
+                </script>
+              </material>
+            </visual>
+            <self_collide>0</self_collide>
+            <kinematic>0</kinematic>
+          </link>
+          <pose frame=''>-5.66178 -1.43448 0.282688 0 -0 0</pose>
+        </model>
+        <static>0</static>
+        <allow_auto_disable>1</allow_auto_disable>
+        <pose frame=''>-0.217911 0.067642 0.745209 0 -0 0</pose>
+      </model>
+      <model name='rectangle_door'>
+        <pose frame=''>0.217911 -0.067642 -0.745205 0 -0 0</pose>
+        <link name='Wall_0'>
+          <collision name='Wall_0_Collision'>
+            <geometry>
+              <box>
+                <size>20.15 0.15 2.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>0 0 1.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_0_Visual'>
+            <pose frame=''>0 0 1.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>20.15 0.15 2.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Grey</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <pose frame=''>0.004778 6 0 0 -0 0</pose>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+        </link>
+        <link name='Wall_10'>
+          <pose frame=''>0.004778 2.5 0 0 -0 0</pose>
+          <visual name='Wall_10_Visual_0'>
+            <pose frame=''>-5.24374 0 1.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>1.66252 0.15 2.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_10_Collision_0'>
+            <geometry>
+              <box>
+                <size>1.66252 0.15 2.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>-5.24374 0 1.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_10_Visual_1'>
+            <pose frame=''>0.831259 0 0.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>10.4875 0.15 0.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_10_Collision_1'>
+            <geometry>
+              <box>
+                <size>10.4875 0.15 0.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>0.831259 0 0.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_10_Visual_2'>
+            <pose frame=''>-2.11057 0 1.5 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>2.25902 0.15 2</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_10_Collision_2'>
+            <geometry>
+              <box>
+                <size>2.25902 0.15 2</size>
+              </box>
+            </geometry>
+            <pose frame=''>-2.11057 0 1.5 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_10_Visual_3'>
+            <pose frame=''>1.41396 0 1.5 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>2.49843 0.15 2</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_10_Collision_3'>
+            <geometry>
+              <box>
+                <size>2.49843 0.15 2</size>
+              </box>
+            </geometry>
+            <pose frame=''>1.41396 0 1.5 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_10_Visual_4'>
+            <pose frame=''>5.03509 0 1.5 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>2.07983 0.15 2</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_10_Collision_4'>
+            <geometry>
+              <box>
+                <size>2.07983 0.15 2</size>
+              </box>
+            </geometry>
+            <pose frame=''>5.03509 0 1.5 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_10_Visual_5'>
+            <pose frame=''>-3.82628 0 1.9 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>1.1724 0.15 1.2</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_10_Collision_5'>
+            <geometry>
+              <box>
+                <size>1.1724 0.15 1.2</size>
+              </box>
+            </geometry>
+            <pose frame=''>-3.82628 0 1.9 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_10_Visual_6'>
+            <pose frame=''>-0.408155 0 1.9 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>1.1458 0.15 1.2</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_10_Collision_6'>
+            <geometry>
+              <box>
+                <size>1.1458 0.15 1.2</size>
+              </box>
+            </geometry>
+            <pose frame=''>-0.408155 0 1.9 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_10_Visual_7'>
+            <pose frame=''>3.32917 0 1.9 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>1.332 0.15 1.2</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_10_Collision_7'>
+            <geometry>
+              <box>
+                <size>1.332 0.15 1.2</size>
+              </box>
+            </geometry>
+            <pose frame=''>3.32917 0 1.9 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+        </link>
+        <link name='Wall_11'>
+          <collision name='Wall_11_Collision'>
+            <geometry>
+              <box>
+                <size>5.15 0.15 2.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>0 0 1.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_11_Visual'>
+            <pose frame=''>0 0 1.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>5.15 0.15 2.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Wood</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <pose frame=''>6.00528 0 0 0 0 -1.5706</pose>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+        </link>
+        <link name='Wall_12'>
+          <pose frame=''>0.005278 -2.5 0 0 -0 3.14159</pose>
+          <visual name='Wall_12_Visual_0'>
+            <pose frame=''>-5.30109 0 1.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>1.54882 0.15 2.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_12_Collision_0'>
+            <geometry>
+              <box>
+                <size>1.54882 0.15 2.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>-5.30109 0 1.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_12_Visual_1'>
+            <pose frame=''>0.77441 0 0.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>10.6022 0.15 0.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_12_Collision_1'>
+            <geometry>
+              <box>
+                <size>10.6022 0.15 0.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>0.77441 0 0.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_12_Visual_2'>
+            <pose frame=''>-2.05186 0 1.5 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>2.71123 0.15 2</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_12_Collision_2'>
+            <geometry>
+              <box>
+                <size>2.71123 0.15 2</size>
+              </box>
+            </geometry>
+            <pose frame=''>-2.05186 0 1.5 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_12_Visual_3'>
+            <pose frame=''>2.21747 0 1.5 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>3.32303 0.15 2</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_12_Collision_3'>
+            <geometry>
+              <box>
+                <size>3.32303 0.15 2</size>
+              </box>
+            </geometry>
+            <pose frame=''>2.21747 0 1.5 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_12_Visual_4'>
+            <pose frame=''>5.56344 0 1.5 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>1.02411 0.15 2</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_12_Collision_4'>
+            <geometry>
+              <box>
+                <size>1.02411 0.15 2</size>
+              </box>
+            </geometry>
+            <pose frame=''>5.56344 0 1.5 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_12_Visual_5'>
+            <pose frame=''>-3.96708 0 1.9 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>1.1192 0.15 1.2</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_12_Collision_5'>
+            <geometry>
+              <box>
+                <size>1.1192 0.15 1.2</size>
+              </box>
+            </geometry>
+            <pose frame=''>-3.96708 0 1.9 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_12_Visual_6'>
+            <pose frame=''>-0.070149 0 1.9 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>1.2522 0.15 1.2</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_12_Collision_6'>
+            <geometry>
+              <box>
+                <size>1.2522 0.15 1.2</size>
+              </box>
+            </geometry>
+            <pose frame=''>-0.070149 0 1.9 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_12_Visual_7'>
+            <pose frame=''>4.46518 0 1.9 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>1.1724 0.15 1.2</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_12_Collision_7'>
+            <geometry>
+              <box>
+                <size>1.1724 0.15 1.2</size>
+              </box>
+            </geometry>
+            <pose frame=''>4.46518 0 1.9 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+        </link>
+        <link name='Wall_13'>
+          <collision name='Wall_13_Collision'>
+            <geometry>
+              <box>
+                <size>5.15 0.15 2.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>0 0 1.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_13_Visual'>
+            <pose frame=''>0 0 1.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>5.15 0.15 2.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Wood</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <pose frame=''>-5.99522 0 0 0 -0 1.5708</pose>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+        </link>
+        <link name='Wall_2'>
+          <pose frame=''>0.004778 6 0 0 -0 0</pose>
+          <visual name='Wall_2_Visual_0'>
+            <pose frame=''>-8.25295 0 1.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>3.6441 0.15 2.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_2_Collision_0'>
+            <geometry>
+              <box>
+                <size>3.6441 0.15 2.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>-8.25295 0 1.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_2_Visual_1'>
+            <pose frame=''>-2.98172 0 1.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>4.24714 0.15 2.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_2_Collision_1'>
+            <geometry>
+              <box>
+                <size>4.24714 0.15 2.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>-2.98172 0 1.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_2_Visual_2'>
+            <pose frame=''>2.81047 0 1.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>4.79244 0.15 2.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_2_Collision_2'>
+            <geometry>
+              <box>
+                <size>4.79244 0.15 2.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>2.81047 0 1.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_2_Visual_3'>
+            <pose frame=''>8.31695 0 1.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>3.51611 0.15 2.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_2_Collision_3'>
+            <geometry>
+              <box>
+                <size>3.51611 0.15 2.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>8.31695 0 1.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_2_Visual_4'>
+            <pose frame=''>-5.76809 0 2.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>1.3256 0.15 0.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_2_Collision_4'>
+            <geometry>
+              <box>
+                <size>1.3256 0.15 0.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>-5.76809 0 2.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_2_Visual_5'>
+            <pose frame=''>-0.221953 0 2.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>1.2724 0.15 0.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_2_Collision_5'>
+            <geometry>
+              <box>
+                <size>1.2724 0.15 0.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>-0.221953 0 2.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_2_Visual_6'>
+            <pose frame=''>5.88279 0 2.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>1.3522 0.15 0.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_2_Collision_6'>
+            <geometry>
+              <box>
+                <size>1.3522 0.15 0.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>5.88279 0 2.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+        </link>
+        <link name='Wall_4'>
+          <pose frame=''>0.013357 -6 0 0 -0 0</pose>
+          <visual name='Wall_4_Visual_0'>
+            <pose frame=''>-8.58309 0 1.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>2.98382 0.15 2.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_4_Collision_0'>
+            <geometry>
+              <box>
+                <size>2.98382 0.15 2.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>-8.58309 0 1.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_4_Visual_1'>
+            <pose frame=''>-3.10335 0 1.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>5.11165 0.15 2.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_4_Collision_1'>
+            <geometry>
+              <box>
+                <size>5.11165 0.15 2.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>-3.10335 0 1.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_4_Visual_2'>
+            <pose frame=''>3.30729 0 1.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>5.11165 0.15 2.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_4_Collision_2'>
+            <geometry>
+              <box>
+                <size>5.11165 0.15 2.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>3.30729 0 1.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_4_Visual_3'>
+            <pose frame=''>8.61856 0 1.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>2.91288 0.15 2.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_4_Collision_3'>
+            <geometry>
+              <box>
+                <size>2.91288 0.15 2.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>8.61856 0 1.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_4_Visual_4'>
+            <pose frame=''>-6.37518 0 2.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>1.432 0.15 0.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_4_Collision_4'>
+            <geometry>
+              <box>
+                <size>1.432 0.15 0.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>-6.37518 0 2.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_4_Visual_5'>
+            <pose frame=''>0.101971 0 2.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>1.299 0.15 0.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_4_Collision_5'>
+            <geometry>
+              <box>
+                <size>1.299 0.15 0.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>0.101971 0 2.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_4_Visual_6'>
+            <pose frame=''>6.51262 0 2.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>1.299 0.15 0.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_4_Collision_6'>
+            <geometry>
+              <box>
+                <size>1.299 0.15 0.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>6.51262 0 2.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+        </link>
+        <link name='Wall_6'>
+          <pose frame=''>9.99577 0 0 0 0 -1.5723</pose>
+          <visual name='Wall_6_Visual_0'>
+            <pose frame=''>-1.99725 0 1.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>8.1555 0.15 2.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_6_Collision_0'>
+            <geometry>
+              <box>
+                <size>8.1555 0.15 2.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>-1.99725 0 1.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_6_Visual_1'>
+            <pose frame=''>4.70065 0 1.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>2.7487 0.15 2.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_6_Collision_1'>
+            <geometry>
+              <box>
+                <size>2.7487 0.15 2.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>4.70065 0 1.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_6_Visual_2'>
+            <pose frame=''>2.7034 0 2.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>1.2458 0.15 0.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_6_Collision_2'>
+            <geometry>
+              <box>
+                <size>1.2458 0.15 0.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>2.7034 0 2.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+        </link>
+        <link name='Wall_8'>
+          <pose frame=''>-10.0042 0 0 0 0 -1.5723</pose>
+          <visual name='Wall_8_Visual_0'>
+            <pose frame=''>-3.99224 0 1.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>4.16552 0.15 2.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_8_Collision_0'>
+            <geometry>
+              <box>
+                <size>4.16552 0.15 2.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>-3.99224 0 1.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_8_Visual_1'>
+            <pose frame=''>2.73226 0 1.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>6.68548 0.15 2.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_8_Collision_1'>
+            <geometry>
+              <box>
+                <size>6.68548 0.15 2.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>2.73226 0 1.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <visual name='Wall_8_Visual_2'>
+            <pose frame=''>-1.25998 0 2.25 0 -0 0</pose>
+            <geometry>
+              <box>
+                <size>1.299 0.15 0.5</size>
+              </box>
+            </geometry>
+            <material>
+              <script>
+                <uri>file://media/materials/scripts/gazebo.material</uri>
+                <name>Gazebo/Bricks</name>
+              </script>
+              <ambient>1 1 1 1</ambient>
+            </material>
+            <meta>
+              <layer>0</layer>
+            </meta>
+          </visual>
+          <collision name='Wall_8_Collision_2'>
+            <geometry>
+              <box>
+                <size>1.299 0.15 0.5</size>
+              </box>
+            </geometry>
+            <pose frame=''>-1.25998 0 2.25 0 -0 0</pose>
+            <max_contacts>10</max_contacts>
+            <surface>
+              <contact>
+                <ode/>
+              </contact>
+              <bounce/>
+              <friction>
+                <torsional>
+                  <ode/>
+                </torsional>
+                <ode/>
+              </friction>
+            </surface>
+          </collision>
+          <self_collide>0</self_collide>
+          <kinematic>0</kinematic>
+        </link>
+        <static>1</static>
+      </model>
+      <static>0</static>
+      <allow_auto_disable>1</allow_auto_disable>
+      <pose frame=''>-0.399168 0.602342 0 0 -0 0</pose>
+    </model>
+    <state world_name='default'>
+      <sim_time>84 645000000</sim_time>
+      <real_time>85 376026401</real_time>
+      <wall_time>1573829012 632433740</wall_time>
+      <iterations>84645</iterations>
+      <model name='ground_plane'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='tagtagtag'>
+        <pose frame=''>7.64989 -4.23093 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <model name='rectang_tag_door'>
+          <pose frame=''>7.43198 -4.16329 0.745209 0 -0 0</pose>
+          <scale>1 1 1</scale>
+          <model name='Tag10'>
+            <pose frame=''>4.86417 -6.90238 0.629978 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>4.86417 -6.90238 0.729978 0 -0 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag11'>
+            <pose frame=''>6.46496 -6.8792 0.652249 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>6.46496 -6.8792 0.752249 0 -0 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag12'>
+            <pose frame=''>10.0571 -6.95132 0.564532 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>10.0571 -6.95132 0.664532 0 -0 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag16'>
+            <pose frame=''>12.9695 -1.7169 0.503039 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>12.9695 -1.7169 0.603039 0 1.57 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag17'>
+            <pose frame=''>9.7069 -1.7005 0.800902 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>9.7069 -1.7005 0.900902 0 -0 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag19'>
+            <pose frame=''>5.87101 -1.70617 0.872024 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>5.87101 -1.70617 0.972024 0 -0 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag500'>
+            <pose frame=''>-1.19953 1.6181 0.920049 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>-1.19953 1.6181 0.920049 0 1.57 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag501'>
+            <pose frame=''>0.864118 1.60617 0.740127 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>0.864118 1.60617 0.740127 0 1.57 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag502'>
+            <pose frame=''>2.83113 1.61749 0.772492 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>2.83113 1.61749 0.772492 0 1.57 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag503'>
+            <pose frame=''>4.87731 1.61051 0.698828 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>4.87731 1.61051 0.698828 0 1.57 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag504'>
+            <pose frame=''>6.89432 1.60702 0.73471 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>6.89432 1.60702 0.73471 0 1.57 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag505'>
+            <pose frame=''>8.88303 1.61272 0.522193 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>8.88303 1.61272 0.522193 0 1.57 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag506'>
+            <pose frame=''>11.0709 1.61677 0.795814 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>11.0709 1.61677 0.795814 0 1.57 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag508'>
+            <pose frame=''>12.884 1.60972 0.450922 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>12.884 1.60972 0.450922 0 1.57 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag509'>
+            <pose frame=''>14.8111 1.6153 0.801163 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>14.8111 1.6153 0.801163 0 1.57 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag510'>
+            <pose frame=''>16.8655 1.60526 0.944276 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>16.8655 1.60526 0.944276 0 1.57 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag511_0'>
+            <pose frame=''>16.9302 -10.204 0.95158 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>16.9302 -10.204 0.95158 0 1.57 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag512'>
+            <pose frame=''>15.8913 -10.1961 0.75335 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>15.8913 -10.1961 0.75335 0 1.57 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag513'>
+            <pose frame=''>13.3239 -10.2115 1.00631 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>13.3239 -10.2115 1.00631 0 1.57 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag514'>
+            <pose frame=''>11.8879 -10.2179 0.922285 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>11.8879 -10.2179 0.922285 0 1.57 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag515'>
+            <pose frame=''>10.0757 -10.2152 0.956057 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>10.0757 -10.2152 0.956057 0 1.57 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag516'>
+            <pose frame=''>6.88136 -10.2101 0.92796 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>6.88136 -10.2101 0.92796 0 1.57 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag517'>
+            <pose frame=''>5.40161 -10.2162 1.01113 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>5.40161 -10.2162 1.01113 0 1.57 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag518'>
+            <pose frame=''>3.93307 -10.2155 0.736865 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>3.93307 -10.2155 0.736865 0 1.57 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag519'>
+            <pose frame=''>0.410768 -10.1914 0.959873 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>0.410768 -10.1914 0.959873 0 1.57 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag520'>
+            <pose frame=''>-0.961632 -10.2025 0.787355 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>-0.961632 -10.2025 0.787355 0 1.57 0</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag531'>
+            <pose frame=''>-2.03236 -9.317 0.866235 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>-2.03236 -9.317 0.866235 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag532'>
+            <pose frame=''>-2.0025 -7.84 0.865109 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>-2.0025 -7.84 0.865109 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag533'>
+            <pose frame=''>-2.00449 -5.84328 0.833854 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>-2.00449 -5.84328 0.833854 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag534'>
+            <pose frame=''>-1.9637 -4.57437 0.385946 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>-1.9637 -4.57437 0.385946 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag535'>
+            <pose frame=''>-2.0267 -1.95463 0.746744 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>-2.0267 -1.95463 0.746744 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag536'>
+            <pose frame=''>-1.97758 -0.646235 0.904543 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>-1.97758 -0.646235 0.904543 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag537'>
+            <pose frame=''>-2.0254 0.663215 0.693909 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>-2.0254 0.663215 0.693909 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag538'>
+            <pose frame=''>-2.02505 -1.31496 0.262439 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>-2.02505 -1.31496 0.262439 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag539'>
+            <pose frame=''>-2.02385 -8.66836 0.735467 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>-2.02385 -8.66836 0.735467 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag540'>
+            <pose frame=''>-2.02624 -6.92856 0.660575 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>-2.02624 -6.92856 0.660575 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag541'>
+            <pose frame=''>17.8127 0.752395 0.283591 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>17.8127 0.752395 0.283591 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag542'>
+            <pose frame=''>17.7755 -0.253395 0.69764 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>17.7755 -0.253395 0.69764 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag543'>
+            <pose frame=''>17.7697 -1.2407 0.697709 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>17.7697 -1.2407 0.697709 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag544'>
+            <pose frame=''>17.7206 -2.41341 0.523075 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>17.7206 -2.41341 0.523075 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag545'>
+            <pose frame=''>17.7525 -3.67226 0.640607 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>17.7525 -3.67226 0.640607 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag546'>
+            <pose frame=''>17.7633 -5.28327 0.585158 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>17.7633 -5.28327 0.585158 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag547'>
+            <pose frame=''>17.7806 -8.2543 0.922716 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>17.7806 -8.2543 0.922716 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag548'>
+            <pose frame=''>14.0118 -6.27027 0.97569 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>14.0118 -6.27027 0.97569 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag549'>
+            <pose frame=''>14.0103 -4.65092 0.808209 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>14.0103 -4.65092 0.808209 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag550'>
+            <pose frame=''>14.007 -2.78349 0.68972 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>14.007 -2.78349 0.68972 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag551'>
+            <pose frame=''>1.80179 -2.22798 0.556381 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>1.80179 -2.22798 0.556381 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag552'>
+            <pose frame=''>1.80933 -3.86306 0.735977 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>1.80933 -3.86306 0.735977 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+          <model name='Tag553'>
+            <pose frame=''>1.7702 -5.59776 1.0279 0 -0 0</pose>
+            <scale>1 1 1</scale>
+            <link name='link'>
+              <pose frame=''>1.7702 -5.59776 1.0279 0 -0 1.57</pose>
+              <velocity>0 0 0 0 -0 0</velocity>
+              <acceleration>0 0 0 0 -0 0</acceleration>
+              <wrench>0 0 0 0 -0 0</wrench>
+            </link>
+          </model>
+        </model>
+        <model name='rectangle_door'>
+          <pose frame=''>7.8678 -4.29857 -0.745205 0 -0 0</pose>
+          <scale>1 1 1</scale>
+          <link name='Wall_0'>
+            <pose frame=''>7.87258 1.70143 -0.745205 0 -0 0</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='Wall_10'>
+            <pose frame=''>7.87258 -1.79857 -0.745205 0 -0 0</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='Wall_11'>
+            <pose frame=''>13.8731 -4.29857 -0.745205 0 0 -1.5706</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='Wall_12'>
+            <pose frame=''>7.87308 -6.79857 -0.745205 0 -0 3.14159</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='Wall_13'>
+            <pose frame=''>1.87258 -4.29857 -0.745205 0 -0 1.5708</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='Wall_2'>
+            <pose frame=''>7.87258 1.70143 -0.745205 0 -0 0</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='Wall_4'>
+            <pose frame=''>7.88116 -10.2986 -0.745205 0 -0 0</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='Wall_6'>
+            <pose frame=''>17.8636 -4.29857 -0.745205 0 0 -1.5723</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+          <link name='Wall_8'>
+            <pose frame=''>-2.1364 -4.29857 -0.745205 0 0 -1.5723</pose>
+            <velocity>0 0 0 0 -0 0</velocity>
+            <acceleration>0 0 0 0 -0 0</acceleration>
+            <wrench>0 0 0 0 -0 0</wrench>
+          </link>
+        </model>
+      </model>
+      <light name='sun'>
+        <pose frame=''>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>2.47364 -2.98612 18.8938 5e-06 1.5698 1.58021</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+  </world>
+</sdf>

@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: dvins_core
+Description: Description of dvins_core
+Version: 0.2.4
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: cv_bridge image_geometry geometry_msgs roscpp rospy mav_msgs nav_msgs std_msgs tf2 tf2_ros

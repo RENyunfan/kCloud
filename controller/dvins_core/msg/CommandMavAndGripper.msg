@@ -1,0 +1,5 @@
+trajectory_msgs/MultiDOFJointTrajectory desired_position_q
+trajectory_msgs/MultiDOFJointTrajectory desired_position_g
+trajectory_msgs/MultiDOFJointTrajectory desired_position_s
+CommandArmServoAngleTrajectory          desried_arm_rad
+
